@@ -1,7 +1,7 @@
 #!/bash/bin 
 
 #lab 1630
-
+chmod 777 lab0
 rm -r lab0
 
 mkdir lab0
@@ -86,7 +86,7 @@ ls -Rt |grep -v "/"| grep -Ev "^(total|$)" | grep "di" | head -n2 ; echo -e "\n"
 //Вывести содержимое файлов: marshtomp, bulbasaur, marshtomp, haunter, bronzong, golduck, sunflora, оставить только строки, заканчивающиеся на 't', ошибки доступа перенаправить в файл в директории /tmp
 cat chandelure4/marshtomp chandelure4/bulbasaur parasect1/marshtomp parasect1/haunter parasect1/bronzong tranquill3/golduck tranquill3/sunflora 2>/tmp/tmp2| grep "t$" ; echo -e "\n"
 //Вывести рекурсивно список имен файлов в директории parasect1, список отсортировать по имени a->z, подавить вывод ошибок доступа
-ls -Rp1 parasect1 2>/dev/null |grep -v "^$" | sort ; echo -e "\n"
+ls -Rp1 parasect1 2>/dev/null |grep -v '/' |grep -v "^$" | sort ; echo -e "\n"
 //Вывести три последних элемента рекурсивного списка имен и атрибутов файлов в директории lab0, список отсортировать по имени z->a, добавить вывод ошибок доступа в стандартный поток вывода
 ls -R1 2>&1| sort -r | grep -Ev '^(total|$|try)' | head -n3 ; echo -e "\n"
 Вывести три первых элемента рекурсивного списка имен и атрибутов файлов в директории lab0, начинающихся на символ 'l', список отсортировать по возрастанию количества жестких ссылок, ошибки доступа не подавлять и не перенаправлять
@@ -96,5 +96,5 @@ rm yanma9
 rm parasect1/marshtomp
 rm Copy_5
 rm parasect1/bronzongyan*
-rm -r chandelure4/walrein
-rm -r chandelure4
+rm -rf chandelure4/walrein
+rm -rf chandelure4
