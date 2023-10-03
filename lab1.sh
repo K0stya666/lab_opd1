@@ -79,11 +79,17 @@ cat parasect1/bronzong parasect1/bronzong > purugly2_75
 cp purugly2 parasect1/cacnea
 cp -r parasect1 tranquill3/ledian
 
+//Подсчитать количество строк содержимого файлов: haunter, bronzong, результат записать в файл в директории /tmp, добавить вывод ошибок доступа в стандартный поток вывода
 wc -l parasect1/haunter parasect1/bronzong > /tmp/tmp1 2>&1 ; echo -e "\n"
+//Вывести два последних элемента рекурсивного списка имен и атрибутов файлов в директории lab0, содержащих строку "di", список отсортировать по возрастанию даты модификации файла, ошибки доступа не подавлять и не перенаправлять
 ls -Rt |grep -v "/"| grep -Ev "^(total|$)" | grep "di" | head -n2 ; echo -e "\n"
+//Вывести содержимое файлов: marshtomp, bulbasaur, marshtomp, haunter, bronzong, golduck, sunflora, оставить только строки, заканчивающиеся на 't', ошибки доступа перенаправить в файл в директории /tmp
 cat chandelure4/marshtomp chandelure4/bulbasaur parasect1/marshtomp parasect1/haunter parasect1/bronzong tranquill3/golduck tranquill3/sunflora 2>/tmp/tmp2| grep "t$" ; echo -e "\n"
-ls -Rp1 parasect1 2>/dev/null |grep -Ev '/|*:' |grep -v "^$" | sort ; echo -e "\n"
+//Вывести рекурсивно список имен файлов в директории parasect1, список отсортировать по имени a->z, подавить вывод ошибок доступа
+ls -Rp1 parasect1 2>/dev/null |grep -v "^$" | sort ; echo -e "\n"
+//Вывести три последних элемента рекурсивного списка имен и атрибутов файлов в директории lab0, список отсортировать по имени z->a, добавить вывод ошибок доступа в стандартный поток вывода
 ls -R1 2>&1| sort -r | grep -Ev '^(total|$|try)' | head -n3 ; echo -e "\n"
+Вывести три первых элемента рекурсивного списка имен и атрибутов файлов в директории lab0, начинающихся на символ 'l', список отсортировать по возрастанию количества жестких ссылок, ошибки доступа не подавлять и не перенаправлять
 ls -R | grep "^l" | sort -k 2,2n | head -n3
 
 rm yanma9
