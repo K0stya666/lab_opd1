@@ -82,7 +82,7 @@ cp -r parasect1 tranquill3/ledian
 //Подсчитать количество строк содержимого файлов: haunter, bronzong, результат записать в файл в директории /tmp, добавить вывод ошибок доступа в стандартный поток вывода
 wc -l parasect1/haunter parasect1/bronzong > /tmp/tmp1 2>&1 ; echo -e "\n"
 //Вывести два последних элемента рекурсивного списка имен и атрибутов файлов в директории lab0, содержащих строку "di", список отсортировать по возрастанию даты модификации файла, ошибки доступа не подавлять и не перенаправлять
-ls -Rt |grep -v "/"| grep -Ev "^(total|$)" | grep "di" | head -n2 ; echo -e "\n"
+ls -Rt |grep -v "/"| grep -Ev "^(total|$)" | grep "di" | tail -n2 ; echo -e "\n"
 //Вывести содержимое файлов: marshtomp, bulbasaur, marshtomp, haunter, bronzong, golduck, sunflora, оставить только строки, заканчивающиеся на 't', ошибки доступа перенаправить в файл в директории /tmp
 cat chandelure4/marshtomp chandelure4/bulbasaur parasect1/marshtomp parasect1/haunter parasect1/bronzong tranquill3/golduck tranquill3/sunflora 2>/tmp/tmp2| grep "t$" ; echo -e "\n"
 //Вывести рекурсивно список имен файлов в директории parasect1, список отсортировать по имени a->z, подавить вывод ошибок доступа
